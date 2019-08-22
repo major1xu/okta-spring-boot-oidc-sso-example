@@ -37,3 +37,39 @@ mvn spring-boot:run \
 You can also deploy directly to Heroku and provision an Okta org at the same time!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+======
+mxu 08-22-2019
+======
+
+https://developer.okta.com/blog/2019/05/02/spring-boot-single-sign-on-oauth-2
+
+OICD app 1
+0oadua5oyLuI5kSDe356
+MctUA-zdkZV9hjrKcMuw-7pY_nC1vGIDOfZXlbX_
+
+app2
+0oaul8cxlVEEfT7BL356
+eGjK1lTJcYTgeww_it_w3kfzSivrstaEcHqCgKC4
+
+iuuser url
+app 1
+https://dev-879975.okta.com/oauth2/aus167i89dLZsUVO4357
+
+app 2
+https://dev-879975.okta.com/oauth2/aus16aiyn5ovXzInI357
+
+mvn spring-boot:run \
+    -Dokta.oauth2.clientId=0oadua5oyLuI5kSDe356 \
+    -Dokta.oauth2.clientSecret=MctUA-zdkZV9hjrKcMuw-7pY_nC1vGIDOfZXlbX_ \
+    -Dokta.oauth2.issuer=https://dev-879975.okta.com/oauth2/aus167i89dLZsUVO4357
+
+mvn spring-boot:run \
+    -Dokta.oauth2.clientId=0oaul8cxlVEEfT7BL356 \
+    -Dokta.oauth2.clientSecret=eGjK1lTJcYTgeww_it_w3kfzSivrstaEcHqCgKC4 \
+    -Dokta.oauth2.issuer=https://dev-879975.okta.com/oauth2/aus16aiyn5ovXzInI357 -Dserver.port=8081
+
+
+export JAVA_HOME=/c/Users/mxu006/downloads/amazon-corretto-11.0.4.11.1-windows-x64/jdk11.0.4_10
+
+export PATH=$JAVA_HOME/bin:$PATH
